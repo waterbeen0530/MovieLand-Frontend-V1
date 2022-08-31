@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import IntroPage from "./IntroPage";
 import MoviePage from "./MoviePage";
 
 export default function MainPage() {
@@ -20,11 +22,12 @@ export default function MainPage() {
   console.log(movies);
   return (
     <>
-      <div>
+      <IntroPage />
+      <Container>
         {loading ? (
           <h1>Loading...</h1>
         ) : (
-          <div>
+          <Wrapper>
             {movies.map((movie) => (
               <MoviePage
                 key={movie.id}
@@ -35,9 +38,23 @@ export default function MainPage() {
                 genres={movie.genres}
               />
             ))}
-          </div>
+          </Wrapper>
         )}
-      </div>
+      </Container>
     </>
   );
 }
+
+const Container = styled.div`
+  padding: 30px 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1d282e;
+`;
+
+const Wrapper = styled.div`
+  width: 1130px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+`;
