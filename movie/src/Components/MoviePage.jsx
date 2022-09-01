@@ -23,9 +23,9 @@ export default function MoviePage({ id, coverImg, title, summary, genres }) {
 }
 
 const Container = styled.div`
-  width: 230px;
-  margin-bottom: 60px;
-  padding: 20px;
+  width: 225px;
+  margin: 0 15px 60px 15px;
+  padding: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;

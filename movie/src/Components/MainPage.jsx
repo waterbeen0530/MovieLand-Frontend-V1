@@ -22,23 +22,25 @@ export default function MainPage() {
   console.log(movies);
   return (
     <>
-      <IntroPage />
       <Container>
         {loading ? (
           <h1>Loading...</h1>
         ) : (
-          <Wrapper>
-            {movies.map((movie) => (
-              <MoviePage
-                key={movie.id}
-                id={movie.id}
-                coverImg={movie.medium_cover_image}
-                title={movie.title}
-                summary={movie.summary}
-                genres={movie.genres}
-              />
-            ))}
-          </Wrapper>
+          <>
+            <h3>Movie List</h3>
+            <Wrapper>
+              {movies.map((movie) => (
+                <MoviePage
+                  key={movie.id}
+                  id={movie.id}
+                  coverImg={movie.medium_cover_image}
+                  title={movie.title}
+                  summary={movie.summary}
+                  genres={movie.genres}
+                />
+              ))}
+            </Wrapper>
+          </>
         )}
       </Container>
     </>
@@ -46,15 +48,22 @@ export default function MainPage() {
 }
 
 const Container = styled.div`
-  padding: 30px 0 30px;
+  width: 100vw;
+  padding: 0 0 30px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   background: #1d282e;
+  h3 {
+    font-size: 50px;
+    font-weight: 500;
+    color: #fff;
+  }
 `;
 
 const Wrapper = styled.div`
-  width: 1130px;
+  width: auto;
+  gap: 30px;
   display: grid;
   grid-template-columns: repeat(4, auto);
 `;
