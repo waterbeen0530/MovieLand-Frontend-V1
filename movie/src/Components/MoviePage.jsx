@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export default function MoviePage({ id, coverImg, title, summary, genres }) {
+export default function MoviePage({ id, coverImg, title, genres }) {
   return (
     <>
       <Container>
@@ -11,7 +11,6 @@ export default function MoviePage({ id, coverImg, title, summary, genres }) {
         <Link to={`/movie/${id}`}>
           <h2>{title}</h2>
         </Link>
-        {/* <p>{summary}</p> */}
         <ul>
           {genres.map((g) => (
             <li key={g}>#{g}</li>
@@ -23,19 +22,20 @@ export default function MoviePage({ id, coverImg, title, summary, genres }) {
 }
 
 const Container = styled.div`
-  width: 225px;
-  margin: 0 15px 60px 15px;
+  margin: 0 10px 60px 10px;
   padding: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
+  box-sizing: border-box;
   background: #fff;
 
   img {
     width: 60%;
     height: 60%;
     border-radius: 10px;
+    object-fit: cover;
   }
 
   h2 {

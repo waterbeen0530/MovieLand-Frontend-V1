@@ -1,34 +1,33 @@
 import React from "react";
 import styled from "styled-components";
-import Group1 from "../img/Group1.png";
-import Group2 from "../img/Group2.png";
-import MovieMan from "../img/MovieMan.png";
 
 export default function IntroPage() {
   return (
-    <Container>
-      <img src={Group1} alt="" id="img1" />
-      <img src={Group2} alt="" id="img2" />
-      <Wrapper>
-        <div>
-          <h2>Movie</h2>
-          <h2>recommendation</h2>
-          <p>Get recommendations from various movies!</p>
-        </div>
-        <img src={MovieMan} alt="" />
-      </Wrapper>
-    </Container>
+    <>
+      <Container id="intro">
+        <img src="/img/Group1.png" alt="" id="img1" />
+        <img src="/img/Group2.png" alt="" id="img2" />
+        <Wrapper>
+          <div>
+            <h2>Movie</h2>
+            <h2>recommendation</h2>
+            <p>Get recommendations from various movies!</p>
+          </div>
+          <img src="/img/MovieMan.png" alt="" />
+        </Wrapper>
+      </Container>
+    </>
   );
 }
 
 const Container = styled.div`
   position: relative;
-  width: 100vw;
   height: 90vh;
   padding-top: 80px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  /* overflow: hidden; */
   background: #0e4c75;
 
   #img1 {
